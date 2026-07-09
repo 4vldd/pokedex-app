@@ -19,6 +19,7 @@ function App() {
   const [search, setSearch] = useState("");
 
   // Marca / desmarca un pokemon como favorito
+  // Se permite bloquear al estar favorito
   function handleToggleFavorite(id) {
     setFavorites((prev) =>
       prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
@@ -26,7 +27,6 @@ function App() {
   }
 
   // Bloquea / desbloquea un pokemon.
-  // Regla de negocio: si se bloquea, se retira automaticamente de favoritos.
   function handleToggleBlocked(id) {
     setBlocked((prev) => {
       const yaBloqueado = prev.includes(id);
